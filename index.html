@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./dist//swagger-ui.css" />
+  </head>
+  <body>
+    <div id="swagger-ui"></div>
+    <script src="./dist/swagger-ui-bundle.js"></script>
+    <script>
+      window.onload = function () {
+        const ui = SwaggerUIBundle({
+          url: './sliceopolis-swagger.yaml',
+          dom_id: '#swagger-ui',
+          deepLinking: true,
+        });
+      };
+
+      window.ui = ui;
+    </script>
+  </body>
+</html>
