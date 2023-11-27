@@ -19,7 +19,7 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-  - url: http://localhost:9999
+  - url: https://sliceopolis.onrender.com/
 tags:
   - name: Auth
     description: APIs for authentication
