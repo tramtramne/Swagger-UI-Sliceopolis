@@ -43,7 +43,7 @@ paths:
         description: |-
           Logs user into the system
         content:
-          application/json:
+          multipart/form-data:
             schema:
               $ref: '#/components/schemas/LoginBody'
 
@@ -147,7 +147,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
@@ -340,7 +340,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
@@ -349,18 +349,18 @@ paths:
                   items:
                     type: object
                     properties:
-                      id_item:
-                        type: string
                       item_name:
                         type: string
                       size:
                         type: string
+                        enum: [SMALL, MEDIUM, LARGE]
                       price:
                         type: number
+                        example: 10.99
                       quantity:
                         type: number
-                total:
-                  type: number
+                        example: 1
+
                 payment:
                   type: object
                   properties:
@@ -369,20 +369,20 @@ paths:
                       enum: [COD, MOMO, VNPAY]
                     status:
                       type: string
+                      enum: [UNPAID, PAID]
                 delivery:
                   type: object
                   properties:
                     id_staff:
                       type: string
-                    status:
-                      type: string
-                      enum: [DELIVERING, DELIVERED]
                 phoneNumber:
                   type: string
-                id_voucher:
+                voucher_code:
                   type: string
+                  example: CODE
                 address:
                   type: string
+                  example: 123, ABC Street, XYZ City
       responses:
         '201':
           description: Order created successfully
@@ -454,7 +454,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
@@ -510,28 +510,6 @@ paths:
                       total:
                         type: integer
                         example: 10
-  /vouchers/applyVoucher:
-    post:
-      summary: Apply a voucher
-      tags:
-        - Voucher
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                voucherCode:
-                  type: string
-                  description: Code of the voucher to apply
-      responses:
-        '200':
-          description: Voucher applied successfully
-        '400':
-          description: Bad request - Invalid input data
-      security:
-        - BearerAuth: []
   /vouchers/{voucherId}:
     get:
       summary: Get details of a voucher by ID
