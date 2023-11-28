@@ -20,6 +20,8 @@ externalDocs:
   url: http://swagger.io
 servers:
   - url: https://sliceopolis.onrender.com/
+  - url: http://localhost:9999
+
 tags:
   - name: Auth
     description: APIs for authentication
@@ -43,7 +45,7 @@ paths:
         description: |-
           Logs user into the system
         content:
-          multipart/form-data:
+          application/json:
             schema:
               $ref: '#/components/schemas/LoginBody'
 
@@ -147,7 +149,7 @@ paths:
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
@@ -287,6 +289,8 @@ paths:
       summary: Create a new pizza   [ADMIN]
       tags:
         - Product
+      security:
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -340,7 +344,7 @@ paths:
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
@@ -454,7 +458,7 @@ paths:
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
@@ -859,7 +863,7 @@ components:
           items:
             type: string
   securitySchemes:
-    auth-token:
+    bearerAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
