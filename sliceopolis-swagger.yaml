@@ -176,7 +176,7 @@ paths:
           description: Bad request
         '500':
           description: Internal server error
-  /users/orderHistory:
+  /users/order-history:
     get:
       tags:
         - User
@@ -196,7 +196,7 @@ paths:
           description: User not found
         '500':
           description: Internal server error
-  /users/allUser:
+  /users/:
     get:
       tags:
         - User
@@ -219,7 +219,7 @@ paths:
       tags:
         - Product
       parameters:
-        - name: productId
+        - name: id
           in: path
           description: ID of the pizza to retrieve
           required: true
@@ -243,7 +243,7 @@ paths:
       tags:
         - Product
       parameters:
-        - name: productId
+        - name: id
           in: path
           description: ID of the product to delete
           required: true
@@ -286,7 +286,7 @@ paths:
         '400':
           description: Bad request
     post:
-      summary: Create a new pizza   [ADMIN]
+      summary: Create a new product   [ADMIN]
       tags:
         - Product
       security:
@@ -411,7 +411,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Order'
-  /orders/{orderId}:
+  /orders/{id}:
     get:
       summary: Get order
       security:
@@ -419,7 +419,7 @@ paths:
       tags:
         - Order
       parameters:
-        - name: orderId
+        - name: id
           in: path
           description: ID of the order to retrieve
           required: true
@@ -514,14 +514,14 @@ paths:
                       total:
                         type: integer
                         example: 10
-  /vouchers/{voucherId}:
+  /vouchers/{id}:
     get:
       summary: Get details of a voucher by ID
       tags:
         - Voucher
       parameters:
         - in: path
-          name: voucherId
+          name: id
           required: true
           schema:
             type: string

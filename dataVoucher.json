@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Spring Sale",
+    "type": "PERCENTAGE",
+    "code": "SPRING25",
+    "minimumOrder": 50,
+    "maximumDiscount": 25,
+    "start_at": "2024-03-01T00:00:00.000Z",
+    "close_at": "2024-03-15T00:00:00.000Z",
+    "used": 0,
+    "description": "Spring discount for all products",
+    "user_list": []
+  },
+  {
+    "name": "Summer Offer",
+    "type": "FIXED",
+    "code": "SUMMER2024",
+    "minimumOrder": 75,
+    "maximumDiscount": 30,
+    "start_at": "2024-06-01T00:00:00.000Z",
+    "close_at": "2024-06-30T00:00:00.000Z",
+    "used": 0,
+    "description": "Special offer for the summer season",
+    "user_list": []
+  },
+  {
+    "name": "Back to School",
+    "type": "FIXED",
+    "code": "BTSCHOOL22",
+    "minimumOrder": 40,
+    "maximumDiscount": 20,
+    "start_at": "2024-08-15T00:00:00.000Z",
+    "close_at": "2024-09-15T00:00:00.000Z",
+    "used": 0,
+    "description": "Discount for back-to-school shopping",
+    "user_list": []
+  },
+  {
+    "name": "Autumn Savings",
+    "type": "PERCENTAGE",
+    "code": "AUTUMN10",
+    "minimumOrder": 30,
+    "maximumDiscount": 10,
+    "start_at": "2024-09-22T00:00:00.000Z",
+    "close_at": "2024-10-15T00:00:00.000Z",
+    "used": 0,
+    "description": "Seasonal savings for autumn",
+    "user_list": []
+  },
+  {
+    "name": "Winter Warmth",
+    "type": "FIXED",
+    "code": "WINTER50",
+    "minimumOrder": 100,
+    "maximumDiscount": 50,
+    "start_at": "2024-11-25T00:00:00.000Z",
+    "close_at": "2024-12-25T00:00:00.000Z",
+    "used": 0,
+    "description": "Get discounts for winter shopping",
+    "user_list": []
+  },
+  {
+    "name": "New Year Sale",
+    "type": "FIXED",
+    "code": "NYSALE2024",
+    "minimumOrder": 100,
+    "maximumDiscount": 50,
+    "start_at": "2024-01-01T00:00:00.000Z",
+    "close_at": "2024-01-10T00:00:00.000Z",
+    "used": 20,
+    "description": "Special discount for New Year 2024",
+    "user_list": [
+      "615e7a4b867e8a001f840f49",
+      "615e7a4b867e8a001f840f50"
+    ]
+  }
+]
