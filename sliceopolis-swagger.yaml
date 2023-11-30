@@ -79,7 +79,7 @@ paths:
             schema:
               type: object
               properties:
-                fullName:
+                fullname:
                   type: string
                   description: Full name
                   example: John Doe
@@ -153,7 +153,7 @@ paths:
             schema:
               type: object
               properties:
-                fullName:
+                fullname:
                   type: string
                   description: User full name
                   example: John Doe
@@ -319,6 +319,27 @@ paths:
                         enum: [SOLDOUT, STOCKING]
                       sold:
                         type: number
+                  example:
+                    [
+                      {
+                        'size': 'SMALL',
+                        'price': 10.99,
+                        'status': 'STOCKING',
+                        'sold': 123,
+                      },
+                      {
+                        'size': 'MEDIUM',
+                        'price': 13.99,
+                        'status': 'STOCKING',
+                        'sold': 456,
+                      },
+                      {
+                        'size': 'LARGE',
+                        'price': 15.99,
+                        'status': 'STOCKING',
+                        'sold': 789,
+                      },
+                    ]
                 category:
                   type: string
                   enum: [PIZZA, DRINK, OTHERS]
@@ -579,7 +600,7 @@ components:
               type: string
               format: MongoId
               example: 655191198a6abb26daddcf32
-            fullName:
+            fullname:
               type: string
               description: User full name
               example: John Doe
@@ -697,7 +718,7 @@ components:
           type: string
           format: MongoId
           example: 655191198a6abb26daddcf32
-        fullName:
+        fullname:
           type: string
           description: User full name
           example: John Doe
