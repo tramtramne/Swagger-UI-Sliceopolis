@@ -458,6 +458,7 @@ paths:
           description: Bad request - Invalid input data
         '500':
           description: Internal server error
+  /orders/{id}/update-status-delivery:
     put:
       summary: Update status order  [ADMIN or STAFF who deliver order]
       security:
@@ -488,6 +489,37 @@ paths:
           description: Bad request - Invalid input data
         '500':
           description: Internal server error
+  /orders/{id}/add-shipper:
+    put:
+      summary: Add shipper to order
+      security:
+        - bearerAuth: []
+      tags:
+        - Order
+      parameters:
+        - name: id
+          in: path
+          description: ID of the order to update
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id_staff:
+                  type: string
+                  example: 655191198a6abb26daddcf32
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
 
   /vouchers/:
     get:
