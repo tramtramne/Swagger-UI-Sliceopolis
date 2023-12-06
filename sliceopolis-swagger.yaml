@@ -363,14 +363,9 @@ paths:
                       id_item:
                         type: string
                         example: 65659632a10a5357d12cadbd
-                      item_name:
-                        type: string
                       size:
                         type: string
                         enum: [SMALL, MEDIUM, LARGE]
-                      price:
-                        type: number
-                        example: 10.99
                       quantity:
                         type: number
                         example: 1
@@ -384,13 +379,9 @@ paths:
                     status:
                       type: string
                       enum: [UNPAID, PAID]
-                delivery:
-                  type: object
-                  properties:
-                    id_staff:
-                      type: string
                 phoneNumber:
                   type: string
+                  example: 0123456789
                 voucher_code:
                   type: string
                   example: CODE
